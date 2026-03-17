@@ -41,7 +41,7 @@ def avg_mark(students, min_average):
     result = []
     for student in students:
         avg = sum(student["marks"]) / len(student["marks"])
-        if avg >= min_average:
+        if avg > min_average:
             result.append(student)
     return result
 
