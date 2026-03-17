@@ -1,0 +1,13 @@
+body { background: #1abc9c; font-family: Tahoma, sans-serif; }
+h1 { font-family: serif; } /* Шрифт с засечками */
+h4 { font-size: 24px; }    /* Измененный размер */
+table { width: 100%; border-collapse: collapse; }
+
+img {
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    height: auto;
+}
