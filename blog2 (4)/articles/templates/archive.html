@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Django Public Blog</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}" />
+  </head>
+  <body class="archive">
+    <div class="content">
+      <header class="header">
+        <img src="{% static 'images/Screenshot_9.png' %}" alt="Django Public Blog" />
+      </header>
+
+      {% for post in posts %}
+        <article class="post">
+          <h2 class="post-title">
+            <a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a>
+          </h2>
+          <div class="post-meta">
+            <div class="article-author">{{ post.author.username }}</div>
+            <div class="article-created-date">{{ post.created_date }}</div>
+          </div>
+          <p class="article-text">{{ post.get_excerpt }}</p>
+        </article>
+      {% empty %}
+        <p class="empty">Пока нет записей.</p>
+      {% endfor %}
+    </div>
+    <h1 class="admin-panel"><a class="back-link" href="http://127.0.0.1:8000/admin/">admin panel</a></h1>
+  </body>
+</html>
