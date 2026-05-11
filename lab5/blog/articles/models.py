@@ -6,7 +6,7 @@ class Article(models.Model):
     text = models.TextField()
     created_date = models.DateField(auto_now_add=True)
 
-    def __unicode__ (self):
+    def __str__ (self):
         return "%s: %s" % (self.author.username, self.title)
     def get_excerpt(self):
         return self.text[:140] + "..." if len(self.text) > 140 else self.text

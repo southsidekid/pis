@@ -1,0 +1,9 @@
+git init папка реп
+git add <имя файла> - один файла
+git add . - для добавления всех файлов в папке
+git commit -m "пофиксил баг"
+git status - смотрим какие изменения проделаны.
+git clone <Адрес реп>
+
+git remote add origin https://github.com/southsidekid/pis.git
+git push -u origin master

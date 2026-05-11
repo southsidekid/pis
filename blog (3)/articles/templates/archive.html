@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Архив статей</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}" />
+</head>
+<body class="archive">
+    <div class="header">
+        <link rel="stylesheet" href="{% static 'css/article.css' %}" />
+        <img src="/static/images/Screenshot_9.png" alt="Logo" style="width: 300px;">
+    </div>
+
+    <div class="archive">
+        {% for post in posts %}
+            <div class="one-post">
+                <h2 class="post-title">{{ post.title }}</h2>
+                <div class="article-info">
+                    <div class="article-author">Автор: {{ post.author.username }}</div>
+                    <div class="article-created-date">Дата: {{ post.created_date }}</div>
+                </div>
+                <p class="article-text">{{ post.get_excerpt }}</p>
+            </div>
+            <hr> {% endfor %}
+    </div>
+</body>
+</html>
